@@ -66,4 +66,5 @@ https://www.msxcomputermagazine.nl/mccm/millennium/milc/gc/topic_32.htm
 
 
 About copy protection MSX.org
+
 https://www.msx.org/forum/msx-talk/software-and-gaming/about-copy-protections
