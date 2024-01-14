@@ -20,7 +20,7 @@ Therefore the copied disk will not be able to boot, the msx will keep restarting
 
 
 
-How to defeat the copy protection and create a normal .DSK file:
+## How to defeat the copy protection and create a normal .DSK file:
 
 Moonblaster is loaded by reading several sectors from disk in to memory.
 
@@ -55,6 +55,8 @@ the loading process will progress a little further than last time.
 we now even see the Sunrise logo appear on screen.
 Unfortunately loading will fail again and all kinds of garbage will be written on screen, followed by a reboot.
 
+
+## Second copy protection check
 This happens because a 'second copy protection check' is built-in to the loader to prevent a copied disks from working.
 This routine loads the manipulated 1024 Bytes of sector 6 into memory at address 0x8000, and checks whether 
 the first 512 bytes and the 2nd 512 bytes of this sector are still the same. 
@@ -83,7 +85,7 @@ After all these changes the copied disk should start normaly and launch Moonblas
 
 ## Note:
 If all this is too difficult, 
-- You can copy the original Moonblaster 1.4 disk with 'AllCopy'(Special-Optie enabled).
+- You can copy the original Moonblaster 1.4 disk with 'AllCopy' (Special-Optie enabled).
 - Or you can download a Public Domain version for free, with a manual and sourcecode included.
 
 
