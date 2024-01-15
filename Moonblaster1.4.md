@@ -28,7 +28,7 @@ Moonblaster is loaded by reading several sectors from disk in to memory.
 |06|0x8000|04|0x0131|FC 84 84 84 84 84||
 |07|0xD800|01|0x0118|83 DD 96 6F 4E CE|Heavily encrypted with several Xor values|
 |08|0x8000|01|0x000E|4D 4F 4F 4E 42 4C||
-|09|0x8000|01|0x015D02 00 40 40 40 40||
+|09|0x8000|01|0x015D|02 00 40 40 40 40||
 |10|0x8000|31|0x0040|E5 2A DC F3 E5 87||
 |11|0x8000|31|0x0060|E5 2A DC F3 E5 87||
 |12|0x8000|31|0x0080|||
