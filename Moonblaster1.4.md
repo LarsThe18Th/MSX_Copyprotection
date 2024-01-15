@@ -40,7 +40,7 @@ Moonblaster is loaded by reading several sectors from disk in to memory.
 
 
 As a result of the sector shift, the sector numbers used by the loader software no longer match up.  
-To counter this, all sectors must move up one place from (track 1 side 0) sector 7 onwards,  
+To counter this, all sectors must moved up one place from (track 1 side 0) sector 7 onwards with a HEX editor,  
 this results in the 2nd part of the split sector 6 (Now in sector 7) will be overwritten.  
 
 
@@ -69,7 +69,7 @@ It was very easy to decrypt and find the (jp 0xD800) jump adress.
 By changing bytes 5C,84 at adress 0x1B82 into 98,9C, we now have redirected the jump to adress 0xC0C4.  
 This adres points to free memory where the bootsector of the disk is stored.  
 This gives us the opportunity to add code that disables the 'copy protection check'.  
-We added the following ML code... ld a,#c9 / ld (d8b7),a / jp #d800 (E3 C9 32 B7 D8 C3 00 D8)  
+We added the following ML code with a HEX editor... ld a,#c9 / ld (d8b7),a / jp #d800 (E3 C9 32 B7 D8 C3 00 D8)  
 
 
 After all these changes the copied disk should start normaly and launch Moonblaster 1.4.  
