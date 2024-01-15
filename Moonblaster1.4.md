@@ -3,7 +3,8 @@
 ## The copy Protection:
 
 Moonblaster comes on a single sided disk.
-On Track 1 (Side0) of this disk, we see the size of Sector 6 is modified, it is 1024 bytes in stead of the standard 512 Bytes.
+On Track 1 (Side0) of this disk, we see the size of Sector 6 is modified,  
+it is 1024 bytes in stead of the standard 512 Bytes.
 
 In this 1024 Bytes large sector we see this text written twice.  
 
