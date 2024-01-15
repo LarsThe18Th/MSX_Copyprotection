@@ -69,7 +69,7 @@ It was very easy to decrypt and find the (jp 0xD800) jump adress.
 By changing bytes 5C,84 at adress 0x1B82 into 98,9C, we now have redirected the jump to adress 0xC0C4.  
 This adres points to free memory where the bootsector of the disk is stored.  
 This gives us the opportunity to add code that disables the 'copy protection check'.  
-We added the following ML code with a HEX editor... ld a,#c9 / ld (d8b7),a / jp #d800 (E3 C9 32 B7 D8 C3 00 D8)  
+We have to add the following values on the disk with a HEX editor at adress 0xC4... E3 C9 32 B7 D8 C3 00 D8 (ld a,#c9 / ld (d8b7),a / jp #d800)  
 
 
 After all these changes the copied disk should start normaly and launch Moonblaster 1.4.  
