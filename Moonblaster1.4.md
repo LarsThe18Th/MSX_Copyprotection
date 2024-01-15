@@ -63,14 +63,13 @@ I found out we only need to change one Byte to disable the 'copy protection chec
 
 ## Security is only as strong as its weakest link
 
-The code that calls the 'copy protection check' routine is loded from address 0xA000 and has already been loaded into memory at this point.  
-
+The code that calls the 'copy protection check' routine is loaded from address 0xA000 and has already been loaded into memory at this point.  
 I found out that this part is stored on disk with a very simple (Xor 0x5C) encryption.  
-It is now very easy to find the (jp 0xD800) jump adress and change it.  
+It was very easy to decrypt and find the (jp 0xD800) jump adress.  
 By changing bytes 5C,84 at adress 0x1B82 into 98,9C, we now have redirected the jump to adress 0xC0C4.  
 This adres points to free memory where the bootsector of the disk is stored.  
-This gives us the opportunity to add code that disables the 'copy protection check' and then start it.  
-We add the following code ld a,#c9 / ld (d8b7),a / jp #d800 (E3 C9 32 B7 D8 C3 00D8)  
+This gives us the opportunity to add code that disables the 'copy protection check'.  
+We added the following ML code... ld a,#c9 / ld (d8b7),a / jp #d800 (E3 C9 32 B7 D8 C3 00 D8)  
 
 
 After all these changes the copied disk should start normaly and launch Moonblaster 1.4.  
