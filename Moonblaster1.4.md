@@ -53,7 +53,7 @@ Unfortunately loading will fail again and all kinds of garbage will be written o
 The garbled screen and reboot happens because a 'copy protection check' is built-in to the loader to prevent a copied disks from working.  
 This routine loads the manipulated 1024 Bytes of sector 6 into memory at address 0x8000,  
 and checks whether the first 512 bytes and the 2nd 512 bytes of this sector are still the same.  
-(which it is not the case, because this sector is now split and we have written over the 2nd part when we shifted all sectors)  
+(which it is not the case, because this sector is now split and we have written over the 2nd part when we shifted up sectors)  
 
 
 This 'copy protection check' routine is stored on disk with very heavy encryption(a few iteration of Xor operations),so we are not going to mess with that.  
