@@ -45,31 +45,31 @@ this results in the 2nd part of the split sector 6 (Now in sector 7) will be ove
 
 
 If we try to boot from the copied disk after shifting up the sectors, the loading process will progress a little further than last time.  
-we now even see the Sunrise logo appear on screen.  
+We now even see the Sunrise logo appear on screen.  
 Unfortunately loading will fail again and all kinds of garbage will be written on screen, followed by a reboot.  
 
 
-## Second copy protection check
-The reboot happens because a 'second copy protection check' is built-in to the loader to prevent a copied disks from working.  
+## The copy protection check
+The garbled screen and reboot happens because a 'copy protection check' is built-in to the loader to prevent a copied disks from working.  
 This routine loads the manipulated 1024 Bytes of sector 6 into memory at address 0x8000, and checks whether the first 512 bytes and the 2nd 512 bytes of this sector are still the same.  
 (which it is not the case, because this sector is now split and we have written over the 2nd part when we shifted all sectors)  
 
 
-This 'second copy protection check' routine is stored on disk with very heavy encryption(a few iteration of Xor operations),so we are not going to mess with that.  
+This 'copy protection check' routine is stored on disk with very heavy encryption(a few iteration of Xor operations),so we are not going to mess with that.  
 Instead we will wait until this routine is loaded in memory unencrypted (at adress 0xD800),  
 and intercept it when this routine is called.  
-I found out we only need to change one Byte to disable the 'second copy protection check' (Writing a 0xC9 [RET] to adress 0xD8B7)  
+I found out we only need to change one Byte to disable the 'copy protection check' (Writing a 0xC9 [RET] to adress 0xD8B7)  
 
 
 ## Security is only as strong as its weakest link
 
-The code that calls the 'second copy protection check' routine is loded from address 0xA000 and has already been loaded into memory at this point.  
+The code that calls the 'copy protection check' routine is loded from address 0xA000 and has already been loaded into memory at this point.  
 
 I found out that this part is stored on disk with a very simple (Xor 0x5C) encryption.  
 It is now very easy to find the (jp 0xD800) jump adress and change it.  
 By changing bytes 5C,84 at adress 0x1B82 into 98,9C, we now have redirected the jump to adress 0xC0C4.  
 This adres points to free memory where the bootsector of the disk is stored.  
-This gives us the opportunity to add code that disables the 'second copy protection check' and then start it.  
+This gives us the opportunity to add code that disables the 'copy protection check' and then start it.  
 We add the following code ld a,#c9 / ld (d8b7),a / jp #d800 (E3 C9 32 B7 D8 C3 00D8)  
 
 
