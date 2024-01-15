@@ -56,9 +56,8 @@ and checks whether the first 512 bytes and the 2nd 512 bytes of this sector are 
 (which it is not the case, because this sector is now split and we have written over the 2nd part when we shifted up sectors)  
 
 
-This 'copy protection check' routine is stored on disk with very heavy encryption(a few iteration of Xor operations),so we are not going to mess with that.  
-Instead we will wait until this routine is loaded in memory unencrypted (at adress 0xD800),  
-and intercept it when this routine is called.  
+This 'copy protection check' routine is stored on disk with very heavy encryption, so we are not going to mess with that.  
+Instead we will wait until this routine is loaded in memory unencrypted (at adress 0xD800), and intercept it when this routine is called.  
 I found out we only need to change one Byte to disable the 'copy protection check' (Writing a 0xC9 [RET] to adress 0xD8B7)  
 
 
