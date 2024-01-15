@@ -74,7 +74,7 @@ We have to add the following values on the disk with a HEX editor at adress 0xC4
 Asm:
 >ld a,#c9  
 >ld (#d8b7),a  
->jp #d800)  
+>jp #d800  
 
 
 After all these changes the copied disk should start normaly and launch Moonblaster 1.4.  
