@@ -44,8 +44,7 @@ To counter this, all sectors must move up one place from (track 1 side 0) sector
 this results in the 2nd part of the split sector 6 (Now in sector 7) will be overwritten.  
 
 
-If we try to boot from the copied disk after shifting up the sectors,  
-the loading process will progress a little further than last time.  
+If we try to boot from the copied disk after shifting up the sectors, the loading process will progress a little further than last time.  
 we now even see the Sunrise logo appear on screen.  
 Unfortunately loading will fail again and all kinds of garbage will be written on screen, followed by a reboot.  
 
