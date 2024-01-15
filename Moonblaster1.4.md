@@ -5,13 +5,13 @@
 Moonblaster comes on a single sided disk.  
 On Track 1 (Side0) of the disk, we see that the size of Sector 6 is modified, it is 1024 bytes in stead of the standard 512 Bytes.  
 
-In this 1024 Bytes large sector we see this text written twice.  
+In this 1024 Bytes sector we see the following text written twice.  
 
 > MOONBLASTER V1.3   Deze diskette is een product van het MOONSOFT TEAM in samenwerking met het MAGIC TEAM. De diskette is ten alle tijden tegen betaling te verkrijgen bij STICHTING SUNRISE. Aan dit programma is 1.5 jaar gewerkt en mocht u besluiten om deze diskette te kopieren of te kraken dan moet u ook beseffen dat u dan de MSX markt ten gronde richt, omdat wij dan ook geen zin meer hebben om nieuwe software uit te brengen, (en er komt toch al zo weinig uit!!!).���������������������������������������������  
 
-When this disk is copied, sector 6 will be split into 2 seperate (512 bytes) sectors on the destination disk.  
-This creates an extra sector, which means that all subsequent sectors are shifted up one place.  
-Therefore the copied disk will not be able to boot, the msx will keep restarting continuously.
+If this disk is copied with a standard sector copier, sector 6 will be split into 2 seperate (512 bytes) sectors on the destination disk.  
+This adds an extra sector to the disk, which means that all subsequent sectors are shifted down one place.  
+As a result the copied disk will not be able to boot, the msx will keep restarting continuously.
 
 
 ## How to defeat the copy protection and create a normal .DSK file:
