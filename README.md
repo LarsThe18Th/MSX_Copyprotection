@@ -1,7 +1,7 @@
 # MSX Copy protections  
 
-
-#### Cheatsheet with useful addresses:  
+\
+**Cheatsheet with useful addresses:**  
 
 
 #### Diskrom Functions 0xF37D  
@@ -31,12 +31,11 @@ Close opened file
 Retuns:  
 A or L = (00 = Ok) (FF = Error)  
 
-\
-#### Sytem Variabels:  
+
+ #### Sytem Variabels:  
 - 0xF323 Error pointer address, jumps to this adress when a error happends  
 
-\
-Bootsector:
+#### Bootsector:
 - 0x15
 
   | ID | Sides | Tracks | Sectors |
@@ -53,11 +52,10 @@ Bootsector:
   | 01 | Single | 1 |
   | 02 | Double | 2 |
 
-\
+
 #### Disk Calculation:
 - 2 Sides x 9 Sectors x 80 Tracks x 512 Bytes = 720KB
 
-\
 #### Links:
 
 - Disk Cursus MCCM  
