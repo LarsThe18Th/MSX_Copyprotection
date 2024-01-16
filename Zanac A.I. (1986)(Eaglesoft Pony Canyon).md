@@ -1,28 +1,23 @@
-Zanac A.I. (1986)(Eaglesoft Pony Canyon).DMK image.
+# Zanac A.I. (1986)(Eaglesoft Pony Canyon).DMK image.  
+https://download.file-hunter.comGamesDMK-FilesZanac%20A.I.%20(1986)(Eaglesoft%20Pony%20Canyon).zip  
 
-https://download.file-hunter.comGamesDMK-FilesZanac%20A.I.%20(1986)(Eaglesoft%20Pony%20Canyon).zip
+## The copy Protection:
 
-Description:
+Zanac comes on a single sided disk.  
 
-Only 40 sectors of side 0 is formatted,
+Only the first 40 tracks of side 0 are formatted.  
+The copy protection check tries to read beyond sector 40 to cause a error.  
 
+If a error occurs (Because sector is not readable) the diskrom jumps to the error pointer  
+in adress 0xF323 and from that adress the game continues loading.  
 
-The copyprotection reads beyond sector 40 to cause a error
+When this disk is copied with a sector copier, the read error will not be triggered.  
+(Because all sectors beyond 40 ARE now formatted and readable)  
+The loader will return to Screen 0 and write 0xC0 192 times to memory from adress 0x0141 to clean the loader from memory.  
+Finaly it jumps back to Basic  
 
-If a error occurs (Because sector is not readable) the diskrom jumps to the error pointer in adress 0xF323
-
-
-When the disk is copied the error will not be triggered (Because the sector is readable)
-after the read is done it jumps to a destructive routine
-
-Returns to Screen 0 and write garbage 0xC0's 192 time to adress 0x0141 (loading routine)
-and finaly jump back to Basic
-
-
-
-
+## How to defeat the copy protection and create a normal .DSK file: 
 Set breakpoint @029C
-
 
 Read System variable F323 to see pointer to what adress will be jumped when a error occurs.
 

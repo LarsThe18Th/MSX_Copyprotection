@@ -13,7 +13,6 @@ If this disk is copied with a standard sector copier, sector 6 will be split int
 This adds an extra sector to the disk, which means that all subsequent sectors are shifted down one place.  
 As a result the copied disk will not be able to boot, the msx will keep restarting continuously.
 
-
 ## How to defeat the copy protection and create a normal .DSK file:
 
 Moonblaster is loaded by reading several sectors from disk in to memory.
@@ -38,23 +37,20 @@ Moonblaster is loaded by reading several sectors from disk in to memory.
 |16|0x8000|01|0x0100|F5 DB FD 32 3C D9||
 |17|0x8000|20|0x0020|||
 
-
+\
 As a result of the sector shift, the sector numbers used by the loader software no longer match up.  
 To counter this, all sectors must moved up one place from (track 1 side 0) sector 7 onwards with a HEX editor,  
 this results in the 2nd part of the split sector 6 (Now in sector 7) will be overwritten.  
 
-
 If we try to boot from the copied disk after shifting up the sectors, the loading process will progress a little further than last time.  
 We now even see the Sunrise logo appear on screen.  
 Unfortunately loading will fail again and all kinds of garbage will be written on screen, followed by a reboot.  
-
 
 ## The copy protection check
 The garbled screen and reboot happens because a 'copy protection check' is built-in to the loader to prevent a copied disks from working.  
 This routine loads the manipulated 1024 Bytes of sector 6 into memory at address 0x8000,  
 and checks whether the first 512 bytes and the 2nd 512 bytes of this sector are still the same.  
 (which it is not the case, because this sector is now split and we have written over the 2nd part when we shifted up sectors)  
-
 
 This 'copy protection check' routine is stored on disk with very heavy encryption, so we are not going to mess with that.  
 Instead we will wait until this routine is loaded in memory unencrypted (at adress 0xD800), and intercept it when this routine is called.  
@@ -79,8 +75,7 @@ Asm:
 
 After all these changes the copied disk should start normaly and launch Moonblaster 1.4.  
 
-
 ## Note:
-If all this is too difficult, 
+If all this was too difficult, 
 - You can copy the original Moonblaster 1.4 disk with 'AllCopy' (Special-Optie enabled).  
-- Or you can download a Public Domain version for free, with a manual and sourcecode included.  
+- Or you can download a Public Domain version for free, with a manual and sourcecode included.
