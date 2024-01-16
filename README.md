@@ -1,10 +1,10 @@
-# MSX Copyprotection
-Here are some useful information and addresses  
+# MSX Copy protections  
 
 
+#### Cheatsheet with useful addresses:  
 
-
-
+\
+\
 **Diskrom Functions 0xF37D**  
 
 - 0x0F  
@@ -19,7 +19,7 @@ Returns:
 A = 0 = No Error / 1= Error
 HL = Number of sectors actually read
 
-- 0x2F
+- 0x2F  
 Absolute sector read  
 DE = Sector number (Adress on DSK -> DE = 02c8 x 512 Bytes(0x200) = 0x59000.  
 L = DriveNr (0 = A drive) ( 1 = B drive )  
@@ -34,33 +34,35 @@ A or L = (00 = Ok) (FF = Error)
 
 \
 Sytem Variabels:  
-0xF323 Error pointer address, jumps to this adress when a error happends  
+- 0xF323 Error pointer address, jumps to this adress when a error happends  
 
 \
 Bootsector:
 - 0x15
 
-F8 = Single Sided 80 Tracks 9 Sectors
-F9 = Double Sided 80 Tracks 9 Sectors
-FC = Single Sided 40 Tracks 9 Sectors
-FD = Double Sided 40 Tracks 9 Sectors
+  | ID | Sides | Tracks | Sectors |
+  | :------------: | :------------: | :------------: | :------------: |
+  | F8 | Single | 80 | 9 |
+  | F9 | Double | 80 | 9 |
+  | FC | Single | 40 | 9 |
+  | FD | Double | 40 | 9 |
 
 - 0x1A
-01 = Single Sided (1 Readhead)
-02 = Double Sided (2 Readheads)
 
+  | Val | Sides | Read Heads|
+  | :------------: | :------------: | :------------: |
+  | 01 | Single | 1 |
+  | 02 | Double | 2 |
 
+\
 Disk Calculation:
 - 2 Sides x 9 Sectors x 80 Tracks x 512 Bytes = 720KB
 
-
+\
 Links:
 
-Disk Cursus MCCM
-
+- Disk Cursus MCCM  
 https://www.msxcomputermagazine.nl/mccm/millennium/milc/gc/topic_32.htm
 
-
-About copy protection MSX.org
-
+- Topic about copyprotection on MSX.org  
 https://www.msx.org/forum/msx-talk/software-and-gaming/about-copy-protections
