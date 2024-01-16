@@ -1,34 +1,34 @@
 # Zanac A.I. (1986)(Eaglesoft Pony Canyon).DMK image.  
-https://download.file-hunter.comGamesDMK-FilesZanac%20A.I.%20(1986)(Eaglesoft%20Pony%20Canyon).zip  
+[Zanac A.I. (1986)(Eaglesoft Pony Canyon).zip](https://download.file-hunter.comGamesDMK-FilesZanac%20A.I.%20(1986)(Eaglesoft%20Pony%20Canyon).zip)  
 
 ## The copy Protection:
 
 Zanac comes on a single sided disk.  
 
-Only the first 40 tracks of side 0 are formatted.  
-The copy protection check tries to read beyond sector 40 to cause a error.  
+Only the first 40 tracks of side 0 are formatted, the copy protection check  tries to read sector 79 to cause a error.  
 
-If a error occurs (Because sector is not readable) the diskrom jumps to the error pointer  
-in adress 0xF323 and from that adress the game continues loading.  
+If an error occurs, because a sector is not readable the diskrom jumps to the error pointer  
+in adress 0xf323 and from that adress the game continues loading.  
 
 When this disk is copied with a sector copier, the read error will not be triggered.  
-(Because all sectors beyond 40 ARE now formatted and readable)  
-The loader will return to Screen 0 and write 0xC0 192 times to memory from adress 0x0141 to clean the loader from memory.  
+This happens because all sectors beyond 40 are now formatted and readable.  
+After this the loader will return to Screen 0 and clears itself from memory by writing 0xC0 192 times from adress 0x0141.  
 Finaly it jumps back to Basic  
 
 ## How to defeat the copy protection and create a normal .DSK file: 
-Set breakpoint @029C
 
-Read System variable F323 to see pointer to what adress will be jumped when a error occurs.
+We first need to find out to what adress the loader jumps to, if an read error happens on the disk.  
+Looking at adress 0xf323 we see the pointer adress 0x039b, this pointer adress contains 0x02e1.  
 
-(0x039b) @ this adress you find e1 and 02 = 0x02e1
+I found out that we can intercept the the call on  memory adress 0x029C, that reads track 79.  
+If we change the call to adress 0x02e1, the will game continues loading without the copy protection check.  
+
+To change this on the DSK file, search for the following HEX values with a HexEditor,  
+`CD 9D 03 C3 53 01 C5`
+
+And change it to,  
+`CD E1 02 C3 53 01 C5`
 
 
-In the DSK file:
-
-
-Search for CD 9D 03 C3 53 01 C5
-
-@adress 199c change CD 9D 03   to CD E1 02
-
+Im my case on adress 0x199c of the DSK file.  
 
