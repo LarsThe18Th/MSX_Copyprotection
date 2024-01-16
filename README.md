@@ -3,9 +3,8 @@
 
 #### Cheatsheet with useful addresses:  
 
-\
-\
-**Diskrom Functions 0xF37D**  
+
+#### Diskrom Functions 0xF37D  
 
 - 0x0F  
 Pointer to FCB (Filename) in memory in Register DE
@@ -33,7 +32,7 @@ Retuns:
 A or L = (00 = Ok) (FF = Error)  
 
 \
-Sytem Variabels:  
+#### Sytem Variabels:  
 - 0xF323 Error pointer address, jumps to this adress when a error happends  
 
 \
@@ -55,11 +54,11 @@ Bootsector:
   | 02 | Double | 2 |
 
 \
-Disk Calculation:
+#### Disk Calculation:
 - 2 Sides x 9 Sectors x 80 Tracks x 512 Bytes = 720KB
 
 \
-Links:
+#### Links:
 
 - Disk Cursus MCCM  
 https://www.msxcomputermagazine.nl/mccm/millennium/milc/gc/topic_32.htm
