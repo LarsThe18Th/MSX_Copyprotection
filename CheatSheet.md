@@ -1,5 +1,5 @@
 
-# Cheatsheet with useful addresses:  
+# Cheatsheet with useful information:  
 
 #### Diskrom Functions 0xF37D  
 
@@ -30,7 +30,7 @@ A or L = (00 = Ok) (FF = Error)
 
 
  #### Sytem Variabels:  
-- 0xF323 Error pointer address, jumps to this adress when a error happends  
+- 0xF323 Error pointer address, jumps to adress pointed at in this adress when a error happends.  
 
 #### Bootsector:
 - 0x15
