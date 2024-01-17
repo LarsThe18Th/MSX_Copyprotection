@@ -15,6 +15,7 @@ This happens because all sectors beyond 10 are now formatted and readable.
 After this the loader will return to Screen 0 and clears itself from memory by writing 0xC0 192 times from adress 0x0141.  
 Finaly it jumps back to Basic.  
 
+![Only first 10 sectors are formatted.](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/Moonblaster1.4/Image1.jpg)
 ## How to defeat the copy protection and create a normal .DSK file: 
 
 We first need to find out to what adress the loader jumps to if an read error happens on the disk.  
