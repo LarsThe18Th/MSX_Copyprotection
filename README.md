@@ -1,4 +1,4 @@
-# MSX Copy protections  
+# Copy protections on MSX  
 
 \
 **Cheatsheet with useful addresses:**  

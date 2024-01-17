@@ -77,5 +77,5 @@ After all these changes the copied disk should start normaly and launch Moonblas
 
 ## Note:
 If all this was too difficult, 
-- You can copy the original Moonblaster 1.4 disk with 'AllCopy' (Special-Optie enabled).  
+- You can copy the original Moonblaster 1.4 disk with `AllCopy` (Special-Optie enabled).  
 - Or you can download a Public Domain version for free, with a manual and sourcecode included.
