@@ -39,7 +39,7 @@ Moonblaster is loaded by reading several sectors from disk in to memory.
 
 \
 As a result of the sector shift, the sector numbers used by the loader software no longer match up.  
-To counter this, all sectors must moved up one place from (track 1 side 0) sector 7 onwards with a HEX editor,  
+To counter this, all sectors must move up one place from (track 1 side 0) sector 7 onwards with a HEX editor,  
 this results in the 2nd part of the split sector 6 (Now in sector 7) will be overwritten.  
 
 ![Track 1 before and after copy and shift.](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/Moonblaster1.4/Image1.jpg)  
