@@ -13,8 +13,6 @@ If this disk is copied with a standard sector copier, sector 6 will be split int
 This adds an extra sector to the disk, which means that all subsequent sectors are shifted down one place.  
 As a result the copied disk will not be able to boot, the msx will keep restarting continuously.
 
-![alt text](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/Moonblaster1.4/Image1.jpg)
-
 ## How to defeat the copy protection and create a normal .DSK file:
 
 Moonblaster is loaded by reading several sectors from disk in to memory.
@@ -44,6 +42,7 @@ As a result of the sector shift, the sector numbers used by the loader software 
 To counter this, all sectors must moved up one place from (track 1 side 0) sector 7 onwards with a HEX editor,  
 this results in the 2nd part of the split sector 6 (Now in sector 7) will be overwritten.  
 
+![alt text](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/Moonblaster1.4/Image1.jpg)  
 If we try to boot from the copied disk after shifting up the sectors, the loading process will progress a little further than last time.  
 We now even see the Sunrise logo appear on screen.  
 Unfortunately loading will fail again and all kinds of garbage will be written on screen, followed by a reboot.  
