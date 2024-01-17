@@ -13,7 +13,7 @@ If this disk is copied with a standard sector copier, sector 6 will be split int
 This adds an extra sector to the disk, which means that all subsequent sectors are shifted down one place.  
 As a result the copied disk will not be able to boot, the msx will keep restarting continuously.
 
-![alt text][https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/Moonblaster1.4/Image1.jpg]
+![alt text](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/Moonblaster1.4/Image1.jpg)
 
 ## How to defeat the copy protection and create a normal .DSK file:
 
