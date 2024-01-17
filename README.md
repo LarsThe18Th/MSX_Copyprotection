@@ -7,17 +7,14 @@
 
 | Software | Sort | Protection | Dificulty |
 | :------------| :------------| :------------ | :------------: |
-| [Zanac A.I.](https://www.google.com) | Game | Unformatted Tracks | * |
-| [Moonblaster 1.4](https://www.google.com) | Music editor | Manipulated sector size | ** |
+| [Zanac A.I.](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/Zanac/Zanac%20A.I.%20(1986)(Eaglesoft%20Pony%20Canyon).md) | Game | Unformatted Tracks | * |
+| [Moonblaster 1.4](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/Moonblaster1.4/Moonblaster1.4.md) | Music editor | Manipulated sector size | ** |
 | The Last Dimention | Demo | - | - |
 
-| ID | Sides | 
+| ID | difficulty | 
 | :------------: | :------------|
 | *    | Easy copy protection   |
 | **   | Medium copy protection |
 | ***  | Hard copy protection   |
 | **** | Insane copy protection |
-
-
-
 
