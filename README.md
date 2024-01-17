@@ -1,4 +1,4 @@
-# Copy protections on MSX (WIP) 
+# Copy protection on MSX (WIP) 
 
 #### Ranking:  
 
