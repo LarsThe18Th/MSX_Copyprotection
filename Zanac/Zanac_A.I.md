@@ -1,4 +1,4 @@
-# Zanac A.I. (1986)(Eaglesoft Pony Canyon).DMK image.  
+# Zanac A.I. (1986)(Eaglesoft Pony Canyon)  
 [Zanac A.I. (1986)(Eaglesoft Pony Canyon).zip](https://download.file-hunter.com/Games/DMK-Files/Zanac%20A.I.%20(1986)(Eaglesoft%20Pony%20Canyon).zip)  
 
 ## The copy Protection:

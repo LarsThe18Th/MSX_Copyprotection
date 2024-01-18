@@ -74,7 +74,7 @@ Asm:
 >jp #d800  
 
 
-After all these changes the copied disk should start normaly and launch Moonblaster 1.4.  
+After all these changes, the copied disk should start normaly and launch Moonblaster 1.4.  
 
 ## Note:
 If all this was too difficult, 
