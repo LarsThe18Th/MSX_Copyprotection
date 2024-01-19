@@ -23,7 +23,7 @@ Moonblaster is loaded by reading several sectors from disk in to memory.
 |02|	0x9000|11|0x0014|92 b4 00 01 09 80|Sunrise Logo|
 |03|0xB000|01|0x000A|11 0d 00 06 01 21||
 |04|0xA000|01|0x000D|7D 9B FD 4D 70 5D|Encrypted with Xor 0x5C|
-|05|0xA1C7|01|0x012D|07 77 00 00 06 70||
+|05|0xA1C7|01|0x012D|07 77 00 00 06 70| Settings, boot with [i] button pressed |
 |06|0x8000|04|0x0131|FC 84 84 84 84 84||
 |07|0xD800|01|0x0118|83 DD 96 6F 4E CE|Heavily encrypted with several Xor values|
 |08|0x8000|01|0x000E|4D 4F 4F 4E 42 4C||
