@@ -2,9 +2,8 @@
 
 ## The copy Protection:
 
-De Erfenis is distributed on a single-sided disk.
-Track 79 of this disk appears to be empty (filled with the value 0xE5),  
-but in reality the pre-gap areas of all 9 sectors on track 79 are padded with 0xF7 instead of the default 0x4E.
+De Erfenis is distributed on a single-sided disk.  
+Track 79 of this disk appears to be empty (filled with the value 0xE5), but in reality the pre-gap areas of all 9 sectors on track 79 are padded with 0xF7 instead of the default 0x4E.
 
 ## The copy protection check
 
