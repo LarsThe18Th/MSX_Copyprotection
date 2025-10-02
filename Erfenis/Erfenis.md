@@ -7,8 +7,8 @@ Track 79 of this disk appears to be empty (filled with the value 0xE5), but in r
 
 ## The copy protection check
 
-The loader uses the TMS279X disk controller's "Load Track" command to read track 79 completely into memory.  
-This includes headers, data, CRC and GAP information. (about 2304 bytes)  
+The loader uses the TMS279X disk controller's "Load Track" command to read track 79 completely into memory,  
+this includes headers, data, CRC and GAP information. (about 2304 bytes)  
 (Due to variations in rotation speed, it is possible that not all gap bytes are read on every attempt.)
 
 The loader then counts the number of occurrences of the value 0xF7 in the loaded data.  
