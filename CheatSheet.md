@@ -60,3 +60,6 @@ https://www.msxcomputermagazine.nl/mccm/millennium/milc/gc/topic_32.htm
 
 - Topic about copyprotection on MSX.org  
 https://www.msx.org/forum/msx-talk/software-and-gaming/about-copy-protections
+
+- Fluxfox Web Edition: A disk image viewer in Rust compiled for web assembly!  
+https://dbalsom.github.io/fluxfox/
