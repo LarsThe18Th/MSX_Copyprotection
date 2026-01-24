@@ -3,7 +3,7 @@
 ## The copy Protection:
 
 Moonblaster comes on a single sided disk.  
-On Side0 Track 1 of the disk, we see that the size of Sector 6 is modified, it is 1024 bytes in stead of the standard 512 Bytes.  
+On Side 0 Track 1 of the disk, we see that the size of Sector 6 is modified, it is 1024 bytes in stead of the standard 512 Bytes.  
 
 In this 1024 Bytes sector we see the following text written twice.  
 
@@ -55,7 +55,7 @@ and checks whether the first 512 bytes and the 2nd 512 bytes of this sector are 
 
 This 'copy protection check' routine is stored on disk with very heavy encryption, so we are not going to mess with that. ***  
 Instead we will wait until this routine is loaded in memory unencrypted (at adress 0xD800), and intercept it when this routine is called.  
-I found out we only need to change one Byte to disable the 'copy protection check' (Writing a 0xC9 [RET] to adress 0xD8B7)  
+I found out we only need to change one Byte to disable the 'copy protection check' (Writing a `0xC9` [RET] to adress 0xD8B7)  
 
 
 ## Security is only as strong as its weakest link
@@ -63,10 +63,11 @@ I found out we only need to change one Byte to disable the 'copy protection chec
 The code that calls the 'copy protection check' routine is loaded from address 0xA000 and has already been loaded into memory at this point.  
 I found out that this part is stored on disk with a very simple (Xor 0x5C) encryption.  
 It was very easy to decrypt and find the (jp 0xD800) jump adress.  
-By changing bytes 5C,84 at adress 0x1B82 into 98,9C, we now have redirected the jump to adress 0xC0C4.  
+By changing bytes `0x5C,0x84` at adress 0x1B82 into `0x98,0x9C`, we now have redirected the jump to adress 0xC0C4.  
 This adres points to free memory where the bootsector of the disk is stored.  
 This gives us the opportunity to add code that disables the 'copy protection check'.  
-We have to add the following values on the disk with a HEX editor at adress 0xC4... E3 C9 32 B7 D8 C3 00 D8  
+We have to add the following values on the disk with a HEX editor at adress 0x000C4...  
+`0xE3 0xC9 0x32 0xB7 0xD8 0xC3 0x00 0xD8`  
 
 Asm:
 >ld a,#c9  
@@ -80,10 +81,10 @@ After all these changes, the copied disk should start normaly and launch Moonbla
 
 ## Note: ***
 In the heavy encrypted section where the 'copy protection check' takes place, i found that memory address 0xD8B7  
-is encrypted with `Xor 0x43` and `Xor 0x47`  
+is encrypted with `Xor 0x43` and `Xor 0x47`.  
 Now that we know this, we can disable the 'copy protection check' directly by changing one byte.  
-If we want to place 0xC9 [RET] at address 0xD8B7, we need to encrypt it by `0xC9 Xor 0x46 = 0x8E Xor 0x43 = 0xCD`  
-Use a hex editor to search the disk image for the following hexadecimal values:  
+If we want to place 0xC9 [RET] at address 0xD8B7, we need to encrypt it by `0xC9 Xor 0x46 = 0x8E Xor 0x43 = 0xCD`.  
+Use a HEX editor to search the disk image for the following hexadecimal values:  
 `0x05 0xFC 0x05 0xAB 0xC9 0x40 0x05 0x25`  
 and replace the final value `0x25` with `0xCD`.  
 This disables the 'copy protection check' and allows us to skip the last part 'Security is only as strong as its weakest link'.
