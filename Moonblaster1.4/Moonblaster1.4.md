@@ -3,7 +3,7 @@
 ## The copy Protection:
 
 Moonblaster comes on a single sided disk.  
-On Track 1 (Side0) of the disk, we see that the size of Sector 6 is modified, it is 1024 bytes in stead of the standard 512 Bytes.  
+On Side0 Track 1 of the disk, we see that the size of Sector 6 is modified, it is 1024 bytes in stead of the standard 512 Bytes.  
 
 In this 1024 Bytes sector we see the following text written twice.  
 
@@ -53,7 +53,7 @@ This routine loads the manipulated 1024 Bytes of sector 6 into memory at address
 and checks whether the first 512 bytes and the 2nd 512 bytes of this sector are still the same.  
 (which it is not the case, because this sector is now split and we have written over the 2nd part when we shifted up sectors)  
 
-This 'copy protection check' routine is stored on disk with very heavy encryption, so we are not going to mess with that.  
+This 'copy protection check' routine is stored on disk with very heavy encryption, so we are not going to mess with that. ***  
 Instead we will wait until this routine is loaded in memory unencrypted (at adress 0xD800), and intercept it when this routine is called.  
 I found out we only need to change one Byte to disable the 'copy protection check' (Writing a 0xC9 [RET] to adress 0xD8B7)  
 
@@ -76,6 +76,18 @@ Asm:
 
 After all these changes, the copied disk should start normaly and launch Moonblaster 1.4.  
 
+
+
+## Note: ***
+In the heavy encrypted section where the 'copy protection check' takes place, i found that memory address 0xD8B7  
+is encrypted with `Xor 0x43` and `Xor 0x47`  
+Now that we know this, we can disable the 'copy protection check' directly by changing one byte.  
+If we want to place 0xC9 [RET] at address 0xD8B7, we need to encrypt it by `0xC9 Xor 0x46 = 0x8E Xor 0x43 = 0xCD`  
+Use a hex editor to search the disk image for the following hexadecimal values:  
+`0x05 0xFC 0x05 0xAB 0xC9 0x40 0x05 0x25`  
+and replace the final value `0x25` with `0xCD`.  
+This disables the 'copy protection check' and allows us to skip the last part 'Security is only as strong as its weakest link'.
+  
 ## Note:
 If all this was too difficult, 
 - You can copy the original Moonblaster 1.4 disk with `AllCopy` (Special-Optie enabled).  
