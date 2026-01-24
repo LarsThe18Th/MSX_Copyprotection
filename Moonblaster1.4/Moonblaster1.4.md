@@ -79,7 +79,7 @@ After all these changes, the copied disk should start normaly and launch Moonbla
 
 
 
-## Note: ***
+## Note: *** 
 In the heavy encrypted section where the 'copy protection check' takes place, i found that memory address 0xD8B7  
 is encrypted with `Xor 0x43` and `Xor 0x47`.  
 Now that we know this, we can disable the 'copy protection check' directly by changing one byte.  
