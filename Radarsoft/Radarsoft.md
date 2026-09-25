@@ -2,7 +2,7 @@
 ### In this case, Eindeloos and Kruiswoord Puzzel   
 [Eindeloos (1986)(Radarsoft)(nl).zip](https://download.file-hunter.com/Games/DMK-Files/Eindeloos%20(1986)(Radarsoft)(nl).zip)  
 [Kruiswoord Generator (1986)(Radarsoft)(nl).zip](https://download.file-hunter.com/Games/DMK-Files/Kruiswoord%20Generator%20(1986)(Radarsoft)(nl).zip)  
-
+<br>
 
 ## The Copy Protection:
 
@@ -19,7 +19,8 @@ copying the entire disk using a simple sector copier does not trigger the copy p
 This is also the reason why these games do not work from a hard drive.
 
 ![Sector overview.](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/Radarsoft/Image1.jpg) 
-![Sector detail.](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/Radarsoft/Image2.jpg)
+![Sector detail.](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/Radarsoft/Image2.jpg)  
+<br>
 
 ## How to defeat the copy protection and create a normal .DSK file: 
 
@@ -45,7 +46,8 @@ And change it to,
 
 
 In my case, on address 0x14A23 of the DSK file.  
-Now the individual files can be copied to another floppy disk without triggering the copy protection.
+Now the individual files can be copied to another floppy disk without triggering the copy protection.  
+<br>
 
 ## Note:
 If all this was too difficult, 
