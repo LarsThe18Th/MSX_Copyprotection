@@ -1,12 +1,12 @@
 # Radarsoft Games,  
-### In this case, Eindeloos and Kruiswoord Puzzel   
+### In this case, Eindeloos and Kruiswoord Puzzel
 [Eindeloos (1986)(Radarsoft)(nl).zip](https://download.file-hunter.com/Games/DMK-Files/Eindeloos%20(1986)(Radarsoft)(nl).zip)  
 [Kruiswoord Generator (1986)(Radarsoft)(nl).zip](https://download.file-hunter.com/Games/DMK-Files/Kruiswoord%20Generator%20(1986)(Radarsoft)(nl).zip)  
 <br>
 
 ## The Copy Protection:
 
-These games come on a single sided disk.  
+These games come on a single sided disk.
 
 Track 77, Sector 1, is preformatted with `F5,E5,E5,E5,E5,E5,E5,E5...`  
 The copy protection check will load Track 77, Sector 1 in memory at address `0xD400` and then do a test on the first byte.  
@@ -24,16 +24,16 @@ This is also the reason why these games do not work from a hard drive.
 
 ## How to defeat the copy protection and create a normal .DSK file: 
 
-We found out that Track 77, Sector 1 is loaded in memory at address `0xD400`
-and looked up the assembly code that takes care of this.
+We found out that Track 77, Sector 1, is loaded in memory at address `0xD400`,  
+now we can find the assembly code that takes care of this.
 
 
-Asm:  
+Asm:
 ```
-LD	A,(#D400)	3A 00 D4 
-CP	#F5		FE F5  
-JP	Z,#C025		CA 25 C0  
-CALL	#00C0		CD C0 00  
+LD	A,(#D400)	3A 00 D4
+CP	#F5		FE F5
+JP	Z,#C025		CA 25 C0
+CALL	#00C0		CD C0 00
 ```
 
 To disable the copy protection, we need to change the conditional jump instruction into a normal jump. 
