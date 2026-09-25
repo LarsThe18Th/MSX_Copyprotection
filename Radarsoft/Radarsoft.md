@@ -9,7 +9,7 @@
 These games come on a single sided disk.
 
 Track 77, Sector 1, is preformatted with `F5,E5,E5,E5,E5,E5,E5,E5...`  
-The copy protection check will load Track 77, Sector 1 in memory at address `0xD400` and then do a test on the first byte.  
+The copy protection check will load Track 77, Sector 1, in memory at address `0xD400` and then do a test on the first byte.  
 If it is `F5` the loading will proceed.  
 If it is *NOT* `F5` then the MSX will be beeping continuously.
 
@@ -36,13 +36,13 @@ JP	Z,#C025		CA 25 C0
 CALL	#00C0		CD C0 00
 ```
 
-To disable the copy protection, we need to change the conditional jump instruction into a normal jump. 
+To disable the copy protection, we need to change the conditional jump instruction `JP Z,#C025` into a normal jump  `JP #C025`. 
 
 To change this on the DSK file, search for the following HEX values with a HexEditor,  
 `CA 25 C0 CD C0 00`
 
 And change it to,  
-`C4 25 C0 CD C0 00`
+`C3 25 C0 CD C0 00`
 
 
 In my case, on address 0x14A23 of the DSK file.  
