@@ -50,7 +50,7 @@ Search for Hex values `07 01 F5 02 11 00 01 C9` and replace it by `07 01 07 01 1
 If all this was too difficult, 
 - I have written a sample program that allows you to copy the original **The Last Dimension** to another disk without copy protection.   
 You will need an MSX with two disk drives to do this.
-- The original disk contains an extra track on side 0 (Track 80) with extra information.(Not important for the copy protection)  
+- The original disk contains an extra track on side 0 (Track 80) with extra information. (Not important for the copy protection)  
 After an `XOR 0xFF` operation in a HexEditor we see the following information.  
 `DD-001A-04  09/30/93 17:39__5101 3850-8_____000210__________`
 
