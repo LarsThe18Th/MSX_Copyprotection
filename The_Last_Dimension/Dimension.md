@@ -21,9 +21,9 @@ In this case `BC=0x2f5` & `DE=0x100`, `0x2f5/0x100` = `2 /2 sides = Track 1`, Re
 This remainder `0xf5` determines the sector number.  
 Since a physical sector starts at **1** (and not **0**), we add `1`, this results in `0xf6` = Sector `246`.  
 
-If this disk is copied using a standard sector-copying program, the special sector 246 will no longer exist on track 1,  
+Neither Fastcopy 3.0 nor Allcopy can copy this disk.
+Both programs return an error message and refused to copy track 1 (Side 0), which contains the special sector 246,
 this is why the demo on the copied disk fails to load any further.  
-Neither Fastcopy 3.0 nor Allcopy can copy this disk, both programs return a error message.  
 
 
 ![Sector overview.](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/The_Last_Dimension/Image1.jpg) 
