@@ -22,9 +22,10 @@ This remainder `0xf5` determines the sector number.
 Since a physical sector starts at **1** (and not **0**), we add `1`, this results in `0xf6` = Sector `246`.  
 
 Neither Fastcopy 3.0 nor Allcopy can copy this disk.
-Both programs return an error message and refused to copy track 1 (Side 0), which contains the special sector 246,
+Both programs return an error message and refused to copy track 1 (Side 0),  
+which contains the special sector 246,
 this is why the demo on the copied disk fails to load any further.  
-
+<br>
 
 ![Sector overview.](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/The_Last_Dimension/Image1.jpg) 
 ![Sector detail.](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/The_Last_Dimension/Image2.jpg)  
