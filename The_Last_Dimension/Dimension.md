@@ -25,7 +25,7 @@ Neither Fastcopy 3.0 nor Allcopy can copy this disk.
 Both programs return an error message and refused to copy track 1 (Side 0),  
 which contains the special sector 246,
 this is why the demo on the copied disk fails to load any further.  
-<br>
+<br><br>
 
 ![Sector overview.](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/The_Last_Dimension/Image1.jpg) 
 ![Sector detail.](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/The_Last_Dimension/Image2.jpg)  
