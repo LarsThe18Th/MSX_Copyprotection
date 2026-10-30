@@ -45,7 +45,7 @@ In this case `BC=0x107` & `DE=0x009`, `0x107/0x09` = `0x1d (29) /2 sides = Track
 Now we have to to adjust the loader to the new location of the special sector using a hex editor.  
 Search for Hex values `07 01 F5 02 11 00 01 C9` and replace it by `07 01 07 01 11 09 00 C9`
  
-
+<br>
 
 ## Note:
 If all this was too difficult, 
