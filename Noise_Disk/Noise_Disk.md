@@ -12,7 +12,7 @@ This disk has 2 unformatted tracks.
 Track 1 (Side 1), Sector 1 is tested in the startmenu of the demo after the countdown is 0.  
 Track 79 (Side 0 & 1), Sector 6 is tested in the end credits.  
 
-If the copy protection detects these tracks are readable, it will show this message “THIS IS AN ILLEGAL COPY”
+If the copy protection detects these tracks are readable, it will show this message “THIS IS AN ILLEGAL COPY”  
 and the software will crash with a DI, HALT instruction.  
 <br><br>
 
