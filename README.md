@@ -11,7 +11,7 @@
 | [Moonblaster 1.4](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/Moonblaster1.4/Moonblaster1.4.md) | Music editor | Manipulated sector size | Medium |
 | [De Erfenis](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/Erfenis/Erfenis.md) | Game | Preformatted  gap data | Medium |
 | [The Last Dimension](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/The_Last_Dimension/Dimension.md) | Demo | Special track with 2 Sectors | Medium |
-| [Noise Disk](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/Noise_Disk/Noise_Disk.md) | Demo | Two Unformatted tracks | Easy |
+| [Noise Disk](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/Noise_Disk/Noise_Disk.md) | Demo | Two Unformatted Tracks | Easy |
 | [Radarsoft](https://github.com/LarsThe18Th/MSX_Copyprotection/blob/main/Radarsoft/Radarsoft.md) <br> - Eindeloos <br> - Kruiswoord Generator | Game | Track 77 Preformated  | Very Easy |
 
 
